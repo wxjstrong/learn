@@ -15,4 +15,39 @@
       </plugin>
     </plugins>
   </build>
+  <properties>
+        <spring.version>4.1.9.RELEASE</spring.version>
+  </properties>
+  
+  
+  
+  
+  <dependencies>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-core</artifactId>
+         <version>${spring.version}</version>
+      </dependency>
+      <dependency>  
+          <groupId>com.alibaba</groupId>  
+          <artifactId>dubbo</artifactId>  
+          <version>2.5.3</version>  
+          <exclusions>  
+              <exclusion>  
+                  <groupId>org.springframework</groupId>  
+                  <artifactId>spring</artifactId>  
+              </exclusion>  
+          </exclusions>  
+      </dependency>  
+      
+      
+      
+      
+  </dependencies>
+  
+  
+  
+  
+  
+  
 </project>
