@@ -6,9 +6,8 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.wxj</groupId>
-  <artifactId>dubbo-test</artifactId>
+  <artifactId>dubbo-sso</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <build>
     <plugins>
       <plugin>
@@ -17,12 +16,6 @@
           <source>1.6</source>
           <target>1.6</target>
         </configuration>
-      </plugin>
-      <plugin>
-      	<artifactId>maven-war-plugin</artifactId>
-      	<configuration>
-      		<version>3.0</version>
-      	</configuration>
       </plugin>
     </plugins>
   </build>
