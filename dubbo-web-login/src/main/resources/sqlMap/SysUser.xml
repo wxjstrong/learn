@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wm.project.dao.SysUserDao">
+  <select id="query" parameterType="map" resultType="SysUser">
+      select <include refid="baseFelds"/> from SYS_USER T <include refid="searchFelds"/>
+      ORDER BY ID DESC
+      <include refid="pageSelect"/>
+  </select> 
+   <select id="queryCount" parameterType="map" resultType="long">
+      select count(*) from SYS_USER T <include refid="searchFelds"/>
+  </select> 
+   <insert id="save"  parameterType="SysUser">
+   <!-- 执行  com.wm.project.dao.SysUserDao的 getId方法赋值给parameterType参数-->
+     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
+            select LAST_INSERT_ID()
+       </selectKey>
+      INSERT INTO SYS_USER(NAME,AGE,GENDER)VALUES(#{name,jdbcType=VARCHAR},#{age,jdbcType=VARCHAR},#{gender,jdbcType=VARCHAR})
+  </insert> 
+  <update id="update" parameterType="SysUser">
+  UPDATE SYS_USER T
+  <set>
+   <if test="id!=null">
+  T.ID=#{id,jdbcType=VARCHAR}
+  </if>
+  <if test="name!=null">
+  ,T.NAME=#{name,jdbcType=VARCHAR}
+  </if>
+  <if test="age!=null">
+  ,T.AGE=#{age,jdbcType=VARCHAR}
+  </if>
+  <if test="gender!=null">
+  ,T.GENDER=#{gender,jdbcType=VARCHAR}
+  </if>
+  </set>
+  WHERE T.ID=#{id,jdbcType=VARCHAR}
+  </update>
+  <sql id="baseFelds">
+  ID,NAME,AGE,GENDER
+  </sql>
+  <sql id="searchFelds">
+  <where>
+  <if test="id!=null">
+  T.ID=#{id,jdbcType=VARCHAR}
+  </if>
+  <if test="name!=null">
+  AND T.NAME=#{name,jdbcType=VARCHAR}
+  </if>
+  <if test="age!=null">
+   AND T.AGE=#{age,jdbcType=VARCHAR}
+  </if>
+  <if test="gender!=null">
+   AND T.GENDER=#{gender,jdbcType=VARCHAR}
+  </if>
+  </where>
+  </sql>
+  <sql id="pageSelect">
+    <!-- 分页 -->
+   <if test="pageStart!=null and pageSize!=null and isPage==1">
+      limit #{pageStart,jdbcType=VARCHAR},#{pageSize,jdbcType=VARCHAR}
+      </if>
+  </sql>
+   
+</mapper>
