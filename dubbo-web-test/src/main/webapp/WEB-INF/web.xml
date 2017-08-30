@@ -3,25 +3,15 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	<!-- 欢迎页面 -->
-	<welcome-file-list>
-	      <welcome-file>index.html</welcome-file>
-	</welcome-file-list>
-	<!-- 错误页面配置 -->
-	<error-page>
-	   <error-code>404</error-code>
-	   <location>/error.html</location>
-	</error-page>
+
 	<!-- 应用范围内参数 -->
 	<context-param>
 	  <param-name>contextConfigLocation</param-name>
 	  <param-value>classpath:/applicationContext.xml</param-value>
 	</context-param>
-	
-	
 	<!-- 监听器 -->
 	<listener>
-	    <listener-class>org.springframework.web.context.contextLoaderListener</listener-class>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
 	<!-- 过滤器 -->
@@ -44,7 +34,7 @@
 	<!-- servlet -->
 	<servlet>
 	     <servlet-name>dispacther</servlet-name>
-	     <servlet-class>*.do</servlet-class>
+	     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	     <!-- 配置文件的位置 -->
 	     <init-param>
 	        <param-name>contextConfigLocation</param-name>
@@ -57,11 +47,22 @@
 	</servlet>
 	<servlet-mapping>
 	    <servlet-name>dispacther</servlet-name>
-	    <url-pattern>/*</url-pattern>
+	    <url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
 	<!-- 设置会话超时时间 -->
 	<session-config>
 	         <session-timeout>120</session-timeout>
 	</session-config>
+	
+	
+		<!-- 欢迎页面 -->
+	<welcome-file-list>
+	      <welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<!-- 错误页面配置 -->
+	<error-page>
+	   <error-code>404</error-code>
+	   <location>/error.html</location>
+	</error-page>
 </web-app>
