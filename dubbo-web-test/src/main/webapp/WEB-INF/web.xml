@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<!-- 欢迎页面 -->
+	<welcome-file-list>
+	      <welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<!-- 错误页面配置 -->
+	<error-page>
+	   <error-code>404</error-code>
+	   <location>/error.html</location>
+	</error-page>
+	<!-- 应用范围内参数 -->
+	<context-param>
+	  <param-name>contextConfigLocation</param-name>
+	  <param-value>classpath:/applicationContext.xml</param-value>
+	</context-param>
+	
+	
+	<!-- 监听器 -->
+	<listener>
+	    <listener-class>org.springframework.web.context.contextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 过滤器 -->
+	<filter>
+	   <filter-name>encodingFilter</filter-name>
+	   <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	   <init-param>
+	       <param-name>encoding</param-name>
+	       <param-value>UTF-8</param-value>
+	   </init-param>
+	   <init-param>
+	       <param-name>forceEncoding</param-name>
+	       <param-value>true</param-value>
+	   </init-param>
+	</filter>
+	<filter-mapping>
+	   <filter-name>encodingFilter</filter-name>
+	   <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- servlet -->
+	<servlet>
+	     <servlet-name>dispacther</servlet-name>
+	     <servlet-class>*.do</servlet-class>
+	     <!-- 配置文件的位置 -->
+	     <init-param>
+	        <param-name>contextConfigLocation</param-name>
+	        <param-value>classpath:/dispatcher-servlet.xml</param-value> 
+	     </init-param>
+	     <!-- 设置加载顺序 -->
+	     <load-on-startup>1</load-on-startup>
+	     <!-- 开启异步，提高程序效率 -->
+	     <async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>dispacther</servlet-name>
+	    <url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 设置会话超时时间 -->
+	<session-config>
+	         <session-timeout>120</session-timeout>
+	</session-config>
+</web-app>
