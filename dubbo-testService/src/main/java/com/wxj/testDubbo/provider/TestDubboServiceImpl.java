@@ -1,4 +1,4 @@
-package com.wxj.testDubbo.service.impl;
+package com.wxj.testDubbo.provider;
 
 
 import net.sf.json.JSONObject;
@@ -19,9 +19,9 @@ public class TestDubboServiceImpl implements TestDubboService {
 		message="您当前输入的名字是"+userName;
        String str ="{\"message\": "+message+"}";
        
-       JSONObject json = new JSONObject();
-       JSONObject result = json.fromObject(str);
-		return result.toString();
+      /* JSONObject json = new JSONObject();
+       JSONObject result = json.fromObject(str);*/
+		return message;
 	}
 
 	

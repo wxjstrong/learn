@@ -8,16 +8,16 @@
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd   
    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-   http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+   http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd" default-lazy-init="false">
       <!-- 此文件为spring相关配置文件 -->
       <!-- 开启注解 处理器-->
       <context:annotation-config/>
      <!-- 开启组件扫描，扫描路径由basepackage属性指定 -->
      <!-- <context:component-scan base-package="com.wxj.*"/> --> 
-      <aop:aspectj-autoproxy proxy-target-class="true"/> <!--开启基于@AspectJ切面的注释处理器 -->
+      <!-- <aop:aspectj-autoproxy proxy-target-class="true"/> --> <!--开启基于@AspectJ切面的注释处理器 -->
      <!--  <import resource="applicationContext-service.xml"/>
       <import resource="applicationContext-dao.xml"/> -->
-      <import resource="dubbo-consumer.xml"/>
+     <import resource="classpath:dubbo-consumer.xml"/> 
       
       
      
