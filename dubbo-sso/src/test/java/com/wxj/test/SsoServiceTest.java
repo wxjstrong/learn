@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SsoServiceTest {
        public static void main(String[] args){
-    	   ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"sso-provider.xml"});    
+    	   ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"loginAndResign-provider.xml"});    
            context.start();   
            System.out.println("提供者服务已注册成功");    
            try {  

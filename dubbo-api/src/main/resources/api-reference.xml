@@ -9,4 +9,7 @@
 
     <!-- 引用服务配置 -->
     <dubbo:reference id="testDubboApi" interface="com.wxj.testDubbo.service.TestDubboService" cluster="failfast" check="false"/>
+    
+    <!-- 登录相关处理的接口 -->
+     <dubbo:reference id="loginApi" interface="com.wxj.loginAndResign.service.LoginAndResignService" cluster="failfast" check="false"/>
 </beans>
