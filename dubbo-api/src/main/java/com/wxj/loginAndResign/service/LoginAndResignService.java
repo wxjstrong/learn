@@ -6,7 +6,7 @@ public interface LoginAndResignService {
 
 	
 	//注册接口
-	public String redign(User user);
+	public String resign(User user);
 	
 	//查询用户名是否已经被占用
 	
