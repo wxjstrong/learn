@@ -6,13 +6,10 @@
 	<!-- 上下文参数 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-<<<<<<< master
 		<param-value>
-		classpath:/applicationContext.xml
+		classpath:applicationContext.xml
 		</param-value>
-=======
-		<param-value>classpath:applicationContext.xml</param-value>
->>>>>>> local
+	
 	</context-param>
 	<!-- 监听器 -->
 	<listener>
@@ -37,22 +34,18 @@
 	</filter-mapping>
 	<!-- servlet分发器 -->
 	<servlet>
-	      <servlet-name>dispacther</servlet-name>
+	      <servlet-name>dispatcher</servlet-name>
 	      <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	      <init-param>
              <param-name>contextConfigLocation</param-name>
-<<<<<<< master
-             <param-value>classpath:/dispatcher-servlet.xml</param-value>
-=======
              <param-value>classpath:dispacther-servlet.xml</param-value>
->>>>>>> local
           </init-param>
    <load-on-startup>1</load-on-startup><!--当值为正数或零时：Servlet容器先加载数值小的servlet，再依次加载其他数值大的servlet.-->  
    <!-- 开启异步，提高程序效率 -->
    <async-supported>true</async-supported>
 	</servlet>
 	<servlet-mapping>
-	      <servlet-name>dispacther</servlet-name>
+	      <servlet-name>dispatcher</servlet-name>
 	      <url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	<!-- 会话超时 -->
