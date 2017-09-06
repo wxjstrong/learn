@@ -6,7 +6,9 @@
 	<!-- 上下文参数 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/spring/applicationContext.xml</param-value>
+		<param-value>
+		classpath:/applicationContext.xml
+		</param-value>
 	</context-param>
 	<!-- 监听器 -->
 	<listener>
@@ -35,7 +37,7 @@
 	      <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	      <init-param>
              <param-name>contextConfigLocation</param-name>
-             <param-value>classpath:/spring/dispacther-servlet.xml</param-value>
+             <param-value>classpath:/dispatcher-servlet.xml</param-value>
           </init-param>
    <load-on-startup>1</load-on-startup><!--当值为正数或零时：Servlet容器先加载数值小的servlet，再依次加载其他数值大的servlet.-->  
    <!-- 开启异步，提高程序效率 -->
@@ -47,7 +49,7 @@
 	</servlet-mapping>
 	<!-- 会话超时 -->
 	<session-config>
-	      <session-timeout>6000</session-timeout>
+	         <session-timeout>120</session-timeout>
 	</session-config>
 	<!-- 欢迎页面 -->
 	<welcome-file-list>

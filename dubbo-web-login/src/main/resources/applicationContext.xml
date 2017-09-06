@@ -11,6 +11,6 @@
    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd" default-lazy-init="false">
    <!-- 开启注解 -->
    <context:annotation-config/>
-   
-   
+   <!-- 导入dubbo配置文件 -->
+   <import resource="classpath:login-consumer.xml"/>
   </beans>

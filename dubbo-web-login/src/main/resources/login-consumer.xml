@@ -12,5 +12,5 @@
      
      
      <!-- 导入接口部分的配置 -->
-     <import resource="classpath:api-reference.xml"/>
+     <import resource="classpath:/api-reference.xml"/>
 </beans>

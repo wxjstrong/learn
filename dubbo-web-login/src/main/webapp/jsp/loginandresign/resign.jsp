@@ -53,7 +53,7 @@
 		 function checkAccount(){
 		 var account=$("#resign_account").val();
 		 console.log(account);
-		 alert("您输入的用户名为"+account);
+		 //alert("您输入的用户名为"+account);
 		  $.ajax({
 		   	type:"get",
 		   	url:"../../loginAndResign/checkAccount.do",
@@ -69,7 +69,7 @@
 		   	  
 		   	},
 		   	error:function(){
-		   		alert("服务器故障，请稍后再试");
+		   		//alert("服务器故障，请稍后再试");
 		   	}
 		   })
 		 
@@ -121,10 +121,10 @@
 		<div id="iframe1">
 		   
 			<form id="resign_form" action="../../loginAndResign/resign.do" mothed="get" class="form-horizontal">
-				<form action="" mothed="get" class="form-horizontal">
+				
 				<div class="form-group">
 					<label class="col-sm-2 control-label"><span>*</span>账号</label>
-					<label ><input id="resign_account" type="text" name="account" value="" onblur="checkAccount()"></label>
+					<label ><input id="resign_account" type="text" name="userName" value="" onblur="checkAccount()"></label>
 					<lable ><span id="account_msg"></span></lable>
 				</div>
 				<div class="form-group">
@@ -134,7 +134,7 @@
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label"><span>*</span>确认密码</label>
-					<label><input id="confirm_password" type="password" name="password" value="" onblur="checkPWagain()"/></label>
+					<label><input id="confirm_password" type="password" name="confirmPassword" value="" onblur="checkPWagain()"/></label>
 					<lable ><span id="PWconfirm_msg"></span></lable>
 				</div>
 				<div class="form-group">
@@ -148,12 +148,17 @@
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label"><span>*</span>二代身份证号</label>
-					<label><input id="resign_IdCard" type="text" name="idCard" value="" onblur="checkIdCard()"/></label>
+					<label><input id="resign_IdCard" type="text" name="IDCard" value="" onblur="checkIdCard()"/></label>
 					<lable><span id="IdCard_msg"></span></lable>
 				</div>
 				<div class="form-group">
 					<lable class="col-sm-2 control-label">联系电话</lable>
-					<label><input id="resign_phone"type="tel" name="tel" value="" onblur="checkPhone()"/></label>
+					<label><input id="resign_phone"type="tel" name="phonenum" value="" onblur="checkPhone()"/></label>
+					<lable><span id="phone_msg"></span></lable>
+				</div>
+				<div class="form-group">
+					<lable class="col-sm-2 control-label">电子邮箱</lable>
+					<label><input id="resign_eMailphone"type="eMail" name="eMail" value="" /></label>
 					<lable><span id="phone_msg"></span></lable>
 				</div>
 				<div class="form-group">
@@ -161,8 +166,12 @@
 					<label><input type="text" name="address" value=""/></label>
 				</div>
 				<div class="form-group">
+					<lable class="col-sm-2 control-label">出生日期</lable>
+					<label><input type="text" name="borthday" value=""/></label>
+				</div>
+				<div class="form-group">
 					<label class="col-sm-2 control-label">
-					<input type="button" name="submit" value="注册" />
+					<input type="submit"  value="注册" />
 					</label>
 				</div>
 		
