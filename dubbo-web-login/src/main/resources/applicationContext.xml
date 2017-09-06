@@ -11,6 +11,9 @@
    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd" default-lazy-init="false">
    <!-- 开启注解 -->
    <context:annotation-config/>
+   
+   <!-- 开启组件扫描，扫描路径由basepackage属性指定 -->
+   <context:component-scan base-package="com.wxj.*"/>
    <!-- 导入dubbo配置文件 -->
    <import resource="classpath:login-consumer.xml"/>
   </beans>
