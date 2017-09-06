@@ -14,7 +14,7 @@
 	<!-- 默认的注解映射的支持 -->
 	<mvc:annotation-driven />
 	<!-- 开启组件扫描 自动扫描包名 -->
-	<context:component-scan base-package="com.wxj.*"
+	<context:component-scan base-package="com.wxj.*.controller"
 		use-default-filters="false">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
