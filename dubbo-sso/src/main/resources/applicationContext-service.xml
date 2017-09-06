@@ -36,7 +36,7 @@
         </tx:attributes>
       </tx:advice>
       <aop:config>
-          <aop:pointcut id="serviceMethod" expression="execution(* com.wxj.* .service.serviceImpl..*.*(..))" />
+          <aop:pointcut id="serviceMethod" expression="execution(* com.wxj.*.serviceImpl..*.*(..))" />
          
           <aop:advisor id="Adcice" advice-ref="serviceMethod"  pointcut-ref="serviceMethod"/>
       </aop:config>
