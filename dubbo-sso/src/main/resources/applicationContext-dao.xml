@@ -58,10 +58,8 @@
        </bean> 
        
        <!-- 扫描dao包下所有接口,批量自动生成dao实现类组件 -->
-      <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" 
-			value="com.wxj.*.dao">
-		</property>
-	  </bean>
+	   <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>  
+       </bean>  
        
    </beans>
