@@ -3,6 +3,7 @@ package com.wxj.loginAndResign.serviceImpl;
 import java.util.HashMap;
 import java.util.Map;
 
+<<<<<<< master
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -10,11 +11,16 @@ import org.springframework.stereotype.Service;
 
 import com.wxj.common.util.SHAEncrypt;
 import com.wxj.loginAndResign.dao.LARDao;
+=======
+import org.springframework.stereotype.Service;
+
+>>>>>>> local
 import com.wxj.loginAndResign.entity.User;
 import com.wxj.loginAndResign.service.LoginAndResignService;
 @Service
 public class LoginAndResignServiceImpl implements LoginAndResignService{
 
+<<<<<<< master
 	@Autowired
 	LARDao dao;
 	
@@ -35,6 +41,21 @@ public class LoginAndResignServiceImpl implements LoginAndResignService{
 			res="注册失败！";
 		}
 		return res;
+=======
+	@Override
+	public String resign(User user) {
+		
+		Map map = new HashMap();
+		
+		
+		
+		
+		
+		
+		return "";
+		
+		
+>>>>>>> local
 	}
 
 	
