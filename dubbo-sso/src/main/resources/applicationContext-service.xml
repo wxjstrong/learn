@@ -37,9 +37,8 @@
       </tx:advice>
       <aop:config>
           <aop:pointcut id="serviceMethod" expression="execution(* com.wxj.*.serviceImpl..*.*(..))" />
-         
-          <aop:advisor id="Adcice" advice-ref="serviceMethod"  pointcut-ref="serviceMethod"/>
+          
+          <aop:advisor  advice-ref="Advice"  pointcut-ref="serviceMethod"/>
       </aop:config>
-	
-	
+
 	</beans>
