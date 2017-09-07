@@ -11,7 +11,7 @@ import com.wxj.loginAndResign.service.LoginAndResignService;
 @Service
 public class LoginAndResignServiceImpl implements LoginAndResignService{
 
-	@Autowired
+	@Autowired(required=true)
 	LARDao dao;
 	
 	
