@@ -17,6 +17,6 @@
       <aop:aspectj-autoproxy proxy-target-class="true"/> <!--开启基于@AspectJ切面的注释处理器 -->
       <import resource="applicationContext-service.xml"/>
       <import resource="applicationContext-dao.xml"/> 
-      <import resource="loginAndResign-provider.xml"/>
+     
 
 </beans>
