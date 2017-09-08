@@ -9,5 +9,8 @@ import com.wxj.loginAndResign.entity.User;
 public interface LARDao {
 
 	int add(User user);
-
+    int checkExist(String userName);
+   
+    int checkLogin(Map map);
+    
 }

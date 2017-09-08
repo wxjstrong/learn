@@ -3,10 +3,14 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.wxj.loginAndResign.dao.LARDao">
-           <insert id="add" parameterType="com.wxj.loginAndResign.entity.User" >
+          <insert id="add" parameterType="com.wxj.loginAndResign.entity.User" >
               insert into userinfo values(#{id},#{userName},#{password},#{nickName},
               #{gender},#{IDCard}, #{phonenum},#{eMail},#{address},#{borthday})
-           </insert>
+           </insert> 
           
-    
+           <select id="checkExist" parameterType="java.lang.String" resultType="int">
+             select count(1) from userinfo where userName=#{userName}
+           
+           
+           </select>
     </mapper>

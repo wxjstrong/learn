@@ -50,7 +50,7 @@
             <label>登录</label>
             
             </div>
-			<form role="form" id="login_form" action="../../loginAndResign/login.do" method="get">
+			<form role="form" id="login_form" action="../../loginAndResign/checkExist.do" method="get">
 				
 				<div class="form-group">
 					<label>账号</label>

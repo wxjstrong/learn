@@ -120,8 +120,10 @@
 		 </div>
 		<div id="iframe1">
 		   
-			<form id="resign_form" action="../../loginAndResign/resign.do" mothed="get" class="form-horizontal">
-				
+			<form id="resign_form" action="../../loginAndResign/resign.do" method="get" class="form-horizontal">
+				<div>
+				    <input type="hidden" name="id" value="">
+				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label"><span>*</span>账号</label>
 					<label ><input id="resign_account" type="text" name="userName" value="" onblur="checkAccount()"></label>

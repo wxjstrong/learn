@@ -2,8 +2,12 @@ package com.wxj.loginAndResign.entity;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class User implements Serializable {
-       String UserName;
+      
+	   String  id;
+	  
+	   String UserName;
        String password;
        String nickName;
        boolean gender;
@@ -13,8 +17,16 @@ public class User implements Serializable {
 	   String address;
        String borthday;
        //TODO
-       //爱好
-	public String getUserName() {
+       //爱好 
+       
+       public String getId() {
+		return id;
+	   }
+	   public void setId(String id) {
+		this.id = id;
+	   }
+       
+	  public String getUserName() {
 		return UserName;
 	}
 	public void setUserName(String userName) {

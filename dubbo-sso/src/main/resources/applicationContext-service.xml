@@ -24,14 +24,14 @@
       <!-- 配置一个事务通知 -->
       <tx:advice id="Advice" transaction-manager="txManager">
         <tx:attributes>
-         <tx:method name="save*" read-only="true" propagation="REQUIRED"/>
-         <tx:method name="update*" read-only="true" propagation="REQUIRED"/>
-         <tx:method name="add*" read-only="true" propagation="REQUIRED"/>
-         <tx:method name="insert*" read-only="true" propagation="REQUIRED"/>
-         <tx:method name="remove*" read-only="true" propagation="REQUIRED"/>
+         <tx:method name="save*" read-only="false" propagation="REQUIRED"/>
+         <tx:method name="update*" read-only="false" propagation="REQUIRED"/>
+         <tx:method name="add*" read-only="false" propagation="REQUIRED"/>
+         <tx:method name="insert*" read-only="false" propagation="REQUIRED"/>
+         <tx:method name="remove*" read-only="false" propagation="REQUIRED"/>
          <tx:method name="select*" read-only="true" propagation="REQUIRED"/>
          <tx:method name="find*" read-only="true" propagation="REQUIRED"/>
-         <tx:method name="*" read-only="true" />
+       <!--   <tx:method name="*" read-only="true" /> -->
          
         </tx:attributes>
       </tx:advice>
