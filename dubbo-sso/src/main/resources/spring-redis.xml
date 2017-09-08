@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="   
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd   
+   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+   http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd" default-lazy-init="false">
+   <!-- 定位redis的属性文件 -->
+       <context:property-placeholder location="classpath:redis.properties"/>
+   <!-- redis连接池基本参数配置 -->
+       <bean id="jedisConfig" class="redis.clients.jedis.JedisPoolConfig">
+          <property name="maxActive" value="${redis.maxActive}"></property>
+          <property name="maxWait" value="${redis.maxWait}"></property>
+          <property name="maxIdle" value="${redis.maxIdle}"></property>
+          
+          <property name="testOnBorrow" value="${redis.testOnBorrow}"></property>
+          
+          <property name="maxTotal" value="${redis.maxTotal}"></property>
+       </bean>
+   <!-- redis连接池配置/连接工厂配置 -->
+       <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+          <property name="host" value="${redis.host}"></property>
+          <property name="port" value="${redis.port}"></property>
+          <property name="password" value="${redis.password}"></property>
+          <property name="jedisConfig" ref="jedisConfig"></property>
+       </bean>
+  
+   <!-- 调用连接池工厂配置 -->
+        <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+             <property name="connectionFactory" ref="connectionFactory"></property>
+             <!-- 如果不配置Serilalizer，那么存储的时候智能使用String，如果使用User类型 存储，就会提示错误User can't cast to String-->
+             <property name="keySerializer">
+                  <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+             </property>     
+             <property name="valueSerialzer">
+                  <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+             </property>
+        </bean>
+   </beans>

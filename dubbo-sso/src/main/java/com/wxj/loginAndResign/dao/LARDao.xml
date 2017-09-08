@@ -10,7 +10,11 @@
           
            <select id="checkExist" parameterType="java.lang.String" resultType="int">
              select count(1) from userinfo where userName=#{userName}
-           
-           
            </select>
+           
+           <select id="checkLogin" parameterType = "java.util.Map" resultType = "int">
+              select count(1) from userinfo where userName=#{loginName} and password=#{password}
+           </select>
+           
+           
     </mapper>

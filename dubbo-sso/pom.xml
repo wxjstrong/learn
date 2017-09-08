@@ -177,6 +177,12 @@
             <version>0.10.0.0</version>
         </dependency>
 		<!-- redis客户端jar -->
+		<dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.8.6.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>

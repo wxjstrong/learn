@@ -62,7 +62,7 @@ public class LARController {
 	 * 
 	 * 暂时不考虑验证码部分
 	 */
-	@RequestMapping("/login")
+	@RequestMapping("/login.do")
 	public void login(String userName,String password,HttpServletResponse resp) throws IOException{
 		//调用登录方法
 		resp.setCharacterEncoding("UTF-8");

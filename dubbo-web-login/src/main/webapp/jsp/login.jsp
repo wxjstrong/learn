@@ -50,11 +50,11 @@
             <label>登录</label>
             
             </div>
-			<form role="form" id="login_form" action="../../loginAndResign/checkExist.do" method="get">
+			<form role="form" id="login_form" action="../loginAndResign/login.do" method="get">
 				
 				<div class="form-group">
 					<label>账号</label>
-					<input type="text" name="account" palceholder="邮箱/手机号/用户名"/>
+					<input type="text" name="userName" palceholder="邮箱/手机号/用户名"/>
 				</div>
 				<div class="form-group">
 					<label>密码</label>
